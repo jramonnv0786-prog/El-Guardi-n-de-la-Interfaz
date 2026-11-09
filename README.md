@@ -2,15 +2,9 @@
 
 # El Guardián de la Interfaz
 
-
 Elige tu nombre, un color de fondo y un tema claro u oscuro. Al volver, la interfaz seguirá como la dejaste.
 
-[![Ver la app](https://img.shields.io/badge/Ver_la_app-GitHub_Pages-b8862b?style=for-the-badge)](https://jramonnv0786-prog.github.io/El-Guardian-De-La-Interfaz/)
-[![Documentación](https://img.shields.io/badge/Documentación-JSDoc-3b2a1a?style=for-the-badge)](https://jramonnv0786-prog.github.io/El-Guardian-De-La-Interfaz/docs/)
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+[Ver la app](https://jramonnv0786-prog.github.io/El-Guardian-De-La-Interfaz/) · [Documentación](https://jramonnv0786-prog.github.io/El-Guardian-De-La-Interfaz/docs/)
 
 </div>
 
