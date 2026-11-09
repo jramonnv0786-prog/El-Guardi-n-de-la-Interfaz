@@ -1,0 +1,216 @@
+/* ==========================================================================
+   El Guardián de la Interfaz — Hoja de estilos
+   Estética: fantasía épica medieval (pergamino, oro envejecido, piedra).
+
+   DECISIÓN DE DISEÑO (especificidad):
+   El fondo del <body> NO se define aquí. Lo controla el input de color desde
+   JS con document.body.style.backgroundColor (estilo en línea), que siempre
+   ganaría a cualquier clase. Por eso el tema oscuro (.tema-oscuro) cambia el
+   pergamino, la cabecera y los textos, pero nunca el fondo del body.
+   ========================================================================== */
+
+/* Tipografías: Cinzel (capitulares romanas) para títulos y
+   EB Garamond (libro antiguo) para el texto. Con fallback a serif. */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap");
+
+/* ---------- Variables (paleta del tema claro) ---------- */
+:root {
+    --pergamino: #f3e5c0;
+    --pergamino-borde: #c9a96e;
+    --tinta: #3b2a1a;
+    --tinta-suave: #6b5134;
+    --oro: #b8862b;
+    --oro-claro: #e0b84f;
+    --sombra: rgba(59, 42, 26, 0.35);
+    --fuente-titulo: "Cinzel", "Times New Roman", serif;
+    --fuente-texto: "EB Garamond", Georgia, serif;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    font-family: var(--fuente-texto);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--tinta);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ---------- Cabecera ---------- */
+header {
+    max-width: 40rem;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 5vw, 2.6rem);
+    letter-spacing: 0.08em;
+    color: var(--oro);
+    text-shadow: 1px 1px 0 var(--tinta), 0 0 12px rgba(224, 184, 79, 0.4);
+}
+
+/* Ornamento bajo el título */
+h1::after {
+    content: "✦ ❦ ✦";
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 1rem;
+    letter-spacing: 0.6em;
+    color: var(--oro);
+    text-shadow: none;
+}
+
+/* ---------- Contenido principal: el "pergamino" ---------- */
+main {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background: radial-gradient(ellipse at center, #f8edd0 0%, var(--pergamino) 60%, #e6d2a0 100%);
+    border: 2px solid var(--pergamino-borde);
+    border-radius: 6px;
+    box-shadow: 0 8px 24px var(--sombra), inset 0 0 40px rgba(139, 101, 47, 0.25);
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+/* ---------- Bloque de bienvenida (lo generará JS: section > h2 + p) ---------- */
+#contenedor-bienvenida section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--pergamino-borde);
+}
+
+#contenedor-bienvenida h2 {
+    margin: 0 0 0.3rem;
+    font-family: var(--fuente-titulo);
+    color: var(--oro);
+}
+
+#contenedor-bienvenida p {
+    margin: 0;
+    font-style: italic;
+    color: var(--tinta-suave);
+}
+
+/* ---------- Formulario ---------- */
+fieldset {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 1.5rem;
+    border: 1px solid var(--pergamino-borde);
+    border-radius: 4px;
+}
+
+legend {
+    padding: 0 0.6rem;
+    font-family: var(--fuente-titulo);
+    font-size: 1.1rem;
+    color: var(--oro);
+}
+
+label {
+    margin-top: 0.6rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    font: inherit;
+    color: var(--tinta);
+    background-color: #fffaf0;
+    border: 1px solid var(--pergamino-borde);
+    border-radius: 4px;
+}
+
+input[type="color"] {
+    width: 4rem;
+    height: 2.5rem;
+    padding: 0.15rem;
+    background-color: #fffaf0;
+    border: 1px solid var(--pergamino-borde);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ---------- Botones ---------- */
+button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem;
+    font-family: var(--fuente-titulo);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: #2a1c0c; /* texto oscuro sobre oro: contraste suficiente (WCAG) */
+    background: linear-gradient(180deg, var(--oro-claro), var(--oro));
+    border: 1px solid #7a5a1c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+button:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+/* Botón secundario (Restablecer): menos protagonismo */
+#btn-reset {
+    margin-top: 0.3rem;
+    color: var(--tinta);
+    background: transparent;
+    border-color: var(--pergamino-borde);
+}
+
+/* Foco visible para navegación con teclado (accesibilidad) */
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--oro-claro);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   TEMA OSCURO — se activa desde JS con document.body.classList.add("tema-oscuro")
+   Piedra oscura y oro. No toca el background del body (ver decisión arriba).
+   ========================================================================== */
+.tema-oscuro {
+    --tinta: #eadcb8;
+    --tinta-suave: #c4b48c;
+    --pergamino-borde: #8a6d3b;
+    --sombra: rgba(0, 0, 0, 0.6);
+}
+
+.tema-oscuro main {
+    background: radial-gradient(ellipse at center, #2e2a26 0%, #1f1c19 70%, #141210 100%);
+    box-shadow: 0 8px 24px var(--sombra), inset 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.tema-oscuro h1 {
+    text-shadow: 1px 1px 0 #000, 0 0 16px rgba(224, 184, 79, 0.6);
+}
+
+.tema-oscuro input[type="text"],
+.tema-oscuro select,
+.tema-oscuro input[type="color"] {
+    color: var(--tinta);
+    background-color: #2a2622;
+}
+
+.tema-oscuro #btn-reset {
+    color: var(--tinta);
+}
+
