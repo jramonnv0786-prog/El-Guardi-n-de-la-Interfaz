@@ -1,2 +1,85 @@
-# El-Guardi-n-de-la-Interfaz
-Enunciado Vais a desarrollar una aplicacion web interactiva en una sola pagina (index.html, estilos.css y script.js) que permita al usuario personalizar el entorno visual de la web. La aplicacion debera recordar la configuracion del usuario incluso si este cierra el navegador o recarga la pagina, utilizando cookies nativas.
+<div align="center">
+
+# El Guardián de la Interfaz
+
+
+Elige tu nombre, un color de fondo y un tema claro u oscuro. Al volver, la interfaz seguirá como la dejaste.
+
+[![Ver la app](https://img.shields.io/badge/Ver_la_app-GitHub_Pages-b8862b?style=for-the-badge)](https://jramonnv0786-prog.github.io/El-Guardi-n-de-la-Interfaz/)
+[![Documentación](https://img.shields.io/badge/Documentación-JSDoc-3b2a1a?style=for-the-badge)](https://jramonnv0786-prog.github.io/El-Guardi-n-de-la-Interfaz/docs/)
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+
+</div>
+
+---
+
+## Sobre el proyecto
+
+Práctica del módulo **Desarrollo Web en Entorno Cliente** (2.º DAW, ILERNA): manipulación del DOM, estilos dinámicos y cookies nativas, sin frameworks ni librerías. Estética de fantasía medieval: pergamino en modo claro, piedra y oro en modo oscuro.
+
+## Funcionalidades
+
+| Acción | Resultado |
+|---|---|
+| Cambiar el **color** | El fondo se actualiza en tiempo real |
+| Elegir **Modo Claro / Oscuro** | El tema cambia al instante |
+| **Guardar Preferencias** | Se guardan nombre, color y tema en cookies |
+| **Recargar** la página | Se restaura todo y aparece una bienvenida |
+| **Restablecer Interfaz** | Se borran las cookies y vuelve el aspecto original |
+
+Nombre y color se guardan 7 días; el tema es una cookie de sesión.
+
+## Implementación
+
+| Parte | Técnica |
+|---|---|
+| **1 · DOM dinámico** | `createElement`, `textContent` y `appendChild` (sin `document.write`) |
+| **2 · Aspecto** | `style.backgroundColor` para el color; `classList` con `.tema-oscuro` para el tema |
+| **3 · Persistencia** | Caducidad calculada con `Date`; valores con `encodeURIComponent` |
+| **4 · Restablecer** | `expires` en el pasado, estilos por defecto y `remove()` de la bienvenida |
+| **5 · Documentación** | JSDoc en el código y documentación generada en `docs/` |
+
+### Decisiones de diseño
+
+- **El tema no modifica el fondo del `body`:** el color se aplica en línea y ganaría siempre a la clase.
+- **Funciones con parámetro:** `aplicarColorFondo()` y `aplicarTema()` se reutilizan en el formulario, al restaurar y al restablecer.
+- **`textContent` en lugar de `innerHTML`:** evita inyección de código (XSS).
+- **`path=/` en todas las cookies:** necesario para poder borrarlas.
+
+## Uso en local
+
+```bash
+git clone https://github.com/jramonnv0786-prog/El-Guardi-n-de-la-Interfaz.git
+```
+
+Abrir `index.html` con **Live Server**. Con `file://` el navegador no guarda cookies.
+
+## Documentación
+
+```bash
+npm install
+npm run docs
+```
+
+## Estructura
+
+```
+El-Guardi-n-de-la-Interfaz/
+├── index.html
+├── css/styles.css
+├── js/script.js
+├── docs/            documentación generada (JSDoc)
+├── package.json
+└── README.md
+```
+
+---
+
+<div align="center">
+
+**Jose Ramon Neira Vega** · 2.º DAW · ILERNA
+
+</div>
