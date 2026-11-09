@@ -54,8 +54,7 @@ Abrir `index.html` con **Live Server**. Con `file://` el navegador no guarda coo
 ## Documentación
 
 ```bash
-npm install
-npm run docs
+npx jsdoc js/script.js -d docs
 ```
 
 ## Estructura
@@ -66,7 +65,6 @@ El-Guardian-De-La-Interfaz/
 ├── css/styles.css
 ├── js/script.js
 ├── docs/            documentación generada (JSDoc)
-├── package.json
 └── README.md
 ```
 
