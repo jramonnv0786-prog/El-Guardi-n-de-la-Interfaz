@@ -5,8 +5,8 @@
 
 Elige tu nombre, un color de fondo y un tema claro u oscuro. Al volver, la interfaz seguirá como la dejaste.
 
-[![Ver la app](https://img.shields.io/badge/Ver_la_app-GitHub_Pages-b8862b?style=for-the-badge)](https://jramonnv0786-prog.github.io/El-Guardi-n-de-la-Interfaz/)
-[![Documentación](https://img.shields.io/badge/Documentación-JSDoc-3b2a1a?style=for-the-badge)](https://jramonnv0786-prog.github.io/El-Guardi-n-de-la-Interfaz/docs/)
+[![Ver la app](https://img.shields.io/badge/Ver_la_app-GitHub_Pages-b8862b?style=for-the-badge)](https://jramonnv0786-prog.github.io/El-Guardian-De-La-Interfaz/)
+[![Documentación](https://img.shields.io/badge/Documentación-JSDoc-3b2a1a?style=for-the-badge)](https://jramonnv0786-prog.github.io/El-Guardian-De-La-Interfaz/docs/)
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
@@ -52,7 +52,7 @@ Nombre y color se guardan 7 días; el tema es una cookie de sesión.
 ## Uso en local
 
 ```bash
-git clone https://github.com/jramonnv0786-prog/El-Guardi-n-de-la-Interfaz.git
+git clone https://github.com/jramonnv0786-prog/El-Guardian-De-La-Interfaz.git
 ```
 
 Abrir `index.html` con **Live Server**. Con `file://` el navegador no guarda cookies.
@@ -67,7 +67,7 @@ npm run docs
 ## Estructura
 
 ```
-El-Guardi-n-de-la-Interfaz/
+El-Guardian-De-La-Interfaz/
 ├── index.html
 ├── css/styles.css
 ├── js/script.js

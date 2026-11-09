@@ -1,5 +1,5 @@
 {
-  "name": "el-guardi-n-de-la-interfaz",
+  "name": "el-guardian-de-la-interfaz",
   "version": "1.0.0",
   "description": "Aplicación de personalización de interfaz con DOM dinámico y cookies nativas (DAW - Entorno Cliente).",
   "main": "index.js",
@@ -11,16 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jramonnv0786-prog/El-Guardi-n-de-la-Interfaz.git"
+    "url": "git+https://github.com/jramonnv0786-prog/El-Guardian-De-La-Interfaz.git"
   },
   "keywords": [],
   "author": "Jose Ramon Neira Vega",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/jramonnv0786-prog/El-Guardi-n-de-la-Interfaz/issues"
+    "url": "https://github.com/jramonnv0786-prog/El-Guardian-De-La-Interfaz/issues"
   },
-  "homepage": "https://github.com/jramonnv0786-prog/El-Guardi-n-de-la-Interfaz#readme",
+  "homepage": "https://github.com/jramonnv0786-prog/El-Guardian-De-La-Interfaz#readme",
   "devDependencies": {
     "jsdoc": "^4.0.5"
   }
